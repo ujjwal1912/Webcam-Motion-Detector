@@ -36,7 +36,7 @@ while True:
     thresh_frame = cv2.dilate(thresh_frame, None, iterations=2)
 
     #finding contour of moving object
-    (_,cnts,_) = cv2.findContours(thresh_frame.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    (cnts,_) = cv2.findContours(thresh_frame.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     for contour in cnts:
         if cv2.contourArea(contour) < 10000:
